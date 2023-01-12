@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문어</title>
+
+    <script>
+        let frame = 0;
+        let canvas;
+        let ctx;
+
+        let fish =[];
+
+        for (let index = 1; index <= 1; index++){
+            const img = new Image();
+            img.src="fish.jpg";
+
+            fish.push(img);
+        }
+        
+
+        function init(){
+            canvas = document.querySelector("canvas");
+            ctx=canvas.getContext("2d");
+
+            //ctx.drawImage(horse, 0,0,);
+                        
+            draw();
+
+            setInterval(draw, 50);
+        }
+        
+        function draw(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+
+            fish.forEach( (item, index) => {
+                ctx.drawImage(item,frame*(1000/5),0,(1000/5),375,0,(index*375),(1000/5),375);
+            });
+
+
+            frame++;
+            frame=frame % 5;
+        }
+    </script>
+</head>
+<body onload="init()">
+    <canvas width="1980" height="600"></canvas>
+</body>
+</html>

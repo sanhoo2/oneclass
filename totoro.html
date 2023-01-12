@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토로로</title>
+
+    <script>
+        const max = 14;
+        let count =1;  
+
+    function roll(){
+        count=count % max;
+        count++;
+
+        const tag =document.querySelector("#rosegold"); 
+        const counter ="0"+ count;
+        tag.src = "totoro/totoro_"+ counter.slice(-2)+".jpg";
+    }
+    window.onload = function(){
+        setInterval(roll, 800);
+    }
+        
+    </script>
+</head>
+<body>
+    <img id="rosegold" width="586" height="658" src="totoro/totoro_01.jpg">
+</body>
+</html>

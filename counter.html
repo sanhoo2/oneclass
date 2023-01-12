@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터</title>
+
+    <script>
+        let count = 0;
+        
+        function counter(){
+            //alert("클릭했습니다");
+
+            count++;
+
+            count = count % 6;
+
+
+            console.log(count);
+
+            const tag =document.querySelector("h1");
+            tag.textContent ="COUNT:"+ count;
+            
+        }
+
+        function timer(){
+            setInterval(counter, 1000);
+        }
+    </script>
+</head>
+<body>
+    <h1>COUNT: 0</h1>
+    <div>
+        <button onclick="counter()">Click</button>
+    </div>
+
+    <div>
+        <button onclick="timer()">Auto</button>
+    </div>
+</body>
+</html>
